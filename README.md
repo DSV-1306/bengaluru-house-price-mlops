@@ -1,7 +1,7 @@
 # Bengaluru House Price Prediction — MLOps
 
-[![CI](https://github.com/YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops/actions/workflows/ci.yml)
-[![CD](https://github.com/YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops/actions/workflows/cd.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops/actions/workflows/cd.yml)
+[![CI](https://github.com/DSV-1306/bengaluru-house-price-mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/DSV-1306/bengaluru-house-price-mlops/actions/workflows/ci.yml)
+[![CD](https://github.com/DSV-1306/bengaluru-house-price-mlops/actions/workflows/cd.yml/badge.svg)](https://github.com/DSV-1306/bengaluru-house-price-mlops/actions/workflows/cd.yml)
 
 Predicts house prices in Bengaluru (in ₹ lakhs) from **location, total sqft, bathrooms and BHK**, trained on
 13,320 listings (`data/raw/Bengaluru_House.csv`). The original Jupyter notebook was turned into a
@@ -16,7 +16,7 @@ Kubernetes (minikube + Azure AKS) → Terraform → GitHub Actions CI/CD → Pro
 |---|---|
 | Streamlit Community Cloud (standalone) | STREAMLIT_CLOUD_URL |
 | Azure AKS (LoadBalancer) | http://AKS_EXTERNAL_IP |
-| GitHub repository | https://github.com/YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops |
+| GitHub repository | https://github.com/DSV-1306/bengaluru-house-price-mlops |
 
 ## Architecture
 
