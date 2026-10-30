@@ -21,7 +21,9 @@ def panel(pid, title, ptype, targets, x, y, w=12, h=8, unit="short", options=Non
     return {
         "id": pid, "title": title, "type": ptype, "datasource": DS, "description": description,
         "gridPos": {"x": x, "y": y, "w": w, "h": h},
-        "fieldConfig": {"defaults": {"unit": unit}, "overrides": []},
+        # single green threshold: Grafana's default turns values above 80 red, which makes counts look like alarms
+        "fieldConfig": {"defaults": {"unit": unit, "thresholds": {
+            "mode": "absolute", "steps": [{"color": "green", "value": None}]}}, "overrides": []},
         "options": options or {},
         "targets": targets,
     }
