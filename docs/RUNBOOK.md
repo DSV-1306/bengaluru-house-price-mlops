@@ -261,11 +261,13 @@ python scripts\load_test.py --url http://127.0.0.1:8000 --requests 3000 --worker
 
 ## Part 5 — Kubernetes on your laptop (minikube)
 
-**5.1 Start minikube and enable metrics (needed for the HPA):**
+**5.1 Stop the docker-compose stack (frees memory), start minikube, enable metrics (needed for the HPA):**
 ```powershell
-minikube start --driver=docker --cpus=2 --memory=4096
+docker compose stop
+minikube start --driver=docker --cpus=2 --memory=2900
 minikube addons enable metrics-server
 ```
+(`--memory=2900` fits an 8 GB laptop, where Docker gets ~3.7 GB. Bring compose back later with `docker compose start`.)
 
 **5.2 Copy the images into minikube and deploy:**
 ```powershell
