@@ -1,0 +1,34 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Terraform (state holds resource details; tfvars holds your subscription ID)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+tfplan
+crash.log
+
+# Kubeconfig / misc
+*.kubeconfig
+federated-credential.json
+
+# Generated model artifacts (rebuilt by `python -m src.train`)
+models/*.joblib
+models/*.json
+!models/.gitkeep

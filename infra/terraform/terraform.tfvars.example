@@ -1,0 +1,8 @@
+# Copy to terraform.tfvars (git-ignored) and fill in:
+#   Copy-Item terraform.tfvars.example terraform.tfvars
+subscription_id = "00000000-0000-0000-0000-000000000000" # az account show --query id -o tsv
+location        = "centralindia"
+prefix          = "hpmlops"
+node_vm_size    = "Standard_B2s"
+node_count      = 1
+github_repo     = "YOUR_GITHUB_USERNAME/bengaluru-house-price-mlops"

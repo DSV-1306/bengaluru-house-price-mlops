@@ -1,0 +1,20 @@
+# Tells the Prometheus from kube-prometheus-stack to scrape the API's /metrics.
+# Apply only after the Helm chart is installed (it provides the ServiceMonitor CRD).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: house-price-api
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - house-price
+  selector:
+    matchLabels:
+      app: house-price-api
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s

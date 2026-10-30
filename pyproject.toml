@@ -1,0 +1,20 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+# Any SettingWithCopyWarning or sklearn feature-name warning is treated as a test failure
+filterwarnings = [
+    "error::pandas.errors.SettingWithCopyWarning",
+    "error:X does not have valid feature names:UserWarning",
+    # third-party: starlette's TestClient uses a deprecated anyio alias
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+    # third-party: Streamlit's chart code calls a deprecated Altair API
+    "ignore::altair.utils.deprecation.AltairDeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP"]

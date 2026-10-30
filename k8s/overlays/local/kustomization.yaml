@@ -1,0 +1,12 @@
+# minikube: images are built locally and loaded with "minikube image load"
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+images:
+  - name: house-price-api
+    newName: house-price-api
+    newTag: "1.0.0"
+  - name: house-price-frontend
+    newName: house-price-frontend
+    newTag: "1.0.0"

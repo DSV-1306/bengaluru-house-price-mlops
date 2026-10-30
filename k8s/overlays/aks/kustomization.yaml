@@ -1,0 +1,14 @@
+# AKS: images come from Azure Container Registry.
+# ACR_LOGIN_SERVER and IMAGE_TAG are placeholders replaced at deploy time
+# (by the CD workflow, or by the PowerShell command in docs/RUNBOOK.md).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+images:
+  - name: house-price-api
+    newName: ACR_LOGIN_SERVER/house-price-api
+    newTag: IMAGE_TAG
+  - name: house-price-frontend
+    newName: ACR_LOGIN_SERVER/house-price-frontend
+    newTag: IMAGE_TAG
