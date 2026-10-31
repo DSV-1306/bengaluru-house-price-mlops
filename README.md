@@ -14,9 +14,23 @@ Kubernetes (minikube + Azure AKS) → Terraform → GitHub Actions CI/CD → Pro
 
 | What | URL |
 |---|---|
-| Streamlit Community Cloud (standalone) | STREAMLIT_CLOUD_URL |
-| Azure AKS (LoadBalancer) | http://AKS_EXTERNAL_IP |
+| Streamlit Community Cloud (standalone) | https://bengaluru-house-price-dsv.streamlit.app |
+| Azure AKS (LoadBalancer) | Not deployed: no Azure subscription available. Terraform, the AKS overlay and CD are ready and validated in CI. |
 | GitHub repository | https://github.com/DSV-1306/bengaluru-house-price-mlops |
+
+**Presenting this project?** See [docs/PRESENTATION.md](docs/PRESENTATION.md): where each task lives, how it works, and the proof.
+
+## Status
+
+| Requirement | Status | Where |
+|---|---|---|
+| Git versioning | ✅ Done | branches `main` (protected) / `dev` / feature, PRs, tags `v1.0.0`, `v1.1.0` |
+| GitHub Actions CI/CD | ✅ CI · ⚠️ CD written, skipped (needs Azure) | `.github/workflows/` |
+| Docker | ✅ Done | `docker/`, `docker-compose.yml` |
+| Kubernetes | ✅ Done on minikube · AKS overlay ready | `k8s/` |
+| Terraform | ⚠️ Written + validated, not applied (no subscription) | `infra/terraform/` |
+| Prometheus / Grafana | ✅ Done (docker-compose) · AKS values ready | `monitoring/`, `k8s/monitoring/` |
+| Streamlit deploy | ✅ Live on Streamlit Community Cloud | `frontend/app.py` |
 
 ## Architecture
 
